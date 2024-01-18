@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 const SignUpForm = () => {
   const [username, setUsername] = useState('');
@@ -12,8 +13,12 @@ const SignUpForm = () => {
     return /\S+@\S+\.\S+/.test(email);
   };
 
-  const createUser = (userData) => {
-    console.log('Creating user with data:', userData);
+  const createUser = async (userData) => {
+    const res = await axios.post("https://quiz-app-backend-service-p5cz.onrender.com/signup", {
+      email: email,
+      password: password,
+    });
+    console.log(res);
   };
 
   const handleSignUp = (e) => {

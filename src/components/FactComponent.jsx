@@ -53,6 +53,7 @@ export const FactComponent = ({ factData, id, data, setData }) => {
             DISLIKE
           </button>
           <h3>{disLikes}</h3>
+          <button class="factBTN">DELETE</button> 
         </div>
       </div>
     </>
